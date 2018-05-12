@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head">
+
+</head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+<nav th:replace="fragments::navigation"></nav>
+	
+<form method="post">
+	
+	<div th:each="li:${list}" class="checkbox">
+		<input type="checkbox" name="userIds" th:value="${li.id}" th:id="${li.id}"/>
+		<label th:for="${li.id}" th:text="${li.name}"></label> 
+		<br/>
+	</div>
+	<input type="submit" value="Remove User"/>
+</form>
+	
+</body>
+</html>

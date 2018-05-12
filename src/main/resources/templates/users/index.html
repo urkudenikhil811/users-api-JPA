@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head">
+
+</head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+<nav th:replace="fragments::navigation"></nav>
+	
+<p th:unless="${list} and ${list.size()}">No users :(</p>
+<table class="table">
+	
+	<tr>
+		<th>Name</th>
+		<th>Birthday</th>
+		<th>Age</th>
+	</tr>
+	
+	<tr th:each="li:${list}">
+		<td th:text="${li.name}"></td>
+		<td th:text="${li.birthday}"></td>
+		<td th:text="${li.age}"></td>
+	</tr>	
+</table>		
+
+	
+</body>
+</html>
